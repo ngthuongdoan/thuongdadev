@@ -9,14 +9,14 @@
     <div class="flex content-around mt-10 gap-x-8">
       <button
         type="button"
-        class="bg-transparent text-sunbrust font-semibold text-base px-5 py-1 rounded-full border border-sunbrust"
+        class="bg-transparent text-sunbrust font-semibold text-base px-5 py-1 rounded-full border border-sunbrust hover:bg-sunbrust hover:text-cloud transition-all duration-300 ease-in-out"
       >
         contact me
       </button>
       <img class="w-10 object-cover" src="~@/assets/icons/heart.png" alt="" />
       <button
         type="button"
-        class="bg-storm font-semibold text-base text-cloud px-5 py-1 rounded-full border"
+        class="bg-storm font-semibold text-base text-cloud px-5 py-1 rounded-full border hover:bg-teal hover:text-cloud transition-all duration-300 ease-in-out"
       >
         see projects
       </button>

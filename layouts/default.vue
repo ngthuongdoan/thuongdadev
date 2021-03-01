@@ -1,36 +1,10 @@
 <template>
-  <div class="h-screen w-screen min-h-screen min-w-screen">
-    <transition name="slide-in">
-      <side-bar v-if="show"></side-bar>
-    </transition>
-    <div @click="showSidebar">
-      <hover-bar :class="show ? 'active' : ''"></hover-bar>
-    </div>
+  <div class="relative h-screen w-screen min-h-screen min-w-screen">
     <Nuxt />
   </div>
 </template>
 
 <script>
-import SideBar from '@/components/SideBar'
-import HoverBar from '@/components/HoverBar'
-
-export default {
-  data() {
-    return {
-      show: false,
-    }
-  },
-  methods: {
-    showSidebar() {
-      console.log('clicked')
-      this.show = !this.show
-    },
-  },
-  components: {
-    SideBar,
-    HoverBar,
-  },
-}
 </script>
 <style lang="scss">
 /* Enter and leave animations can use different */
