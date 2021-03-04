@@ -4674,6 +4674,11 @@ fsevents@^2.1.2, fsevents@~2.3.1:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
+fullpage.js@^3.0.4, fullpage.js@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/fullpage.js/-/fullpage.js-3.1.0.tgz#521e5673145501ab3a0a3d11284f822392e06941"
+  integrity sha512-fbwb9MxcWHfWAR4bV5g+9aWFKdDrgDhFgtBTnfXZMIJU2CpSTbn+eZSKF827atCsLCXUFTMF0CgatagxvzIEqg==
+
 function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
@@ -7220,6 +7225,14 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
+
+nuxt-fullpage.js@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/nuxt-fullpage.js/-/nuxt-fullpage.js-0.0.3.tgz#5566ec503d950a365f7cd130bf096ac81d64fe0e"
+  integrity sha512-xHLK4pCxvKPN/vRnVSulq+gg07pzUo3IWXO4wBNDGV593Xzw1UHsO3MgY//zsFW7rU3eRH1rq38e977HnFCTHA==
+  dependencies:
+    fullpage.js "^3.0.4"
+    vue-fullpage.js "^0.1.2"
 
 nuxt@^2.14.12:
   version "2.15.0"
@@ -10529,6 +10542,13 @@ vue-client-only@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
   integrity sha512-arhk1wtWAfLsJyxGMoEYhoBowM87/i6HLSG2LH/03Yog6i2d9JEN1peMP0Ceis+/n9DxdenGYZZTxbPPJyHciA==
+
+vue-fullpage.js@^0.1.2:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/vue-fullpage.js/-/vue-fullpage.js-0.1.7.tgz#62bc53948f2217fb14ea555021b13fb997b4e141"
+  integrity sha512-dApXyMrAPhikXbl5ngXALvetsIZCOf+ug9kvcvVSQkOoG9yh9stq5PQYMz/A1yIBVUx1yE9/3cK3VP6rl26V1A==
+  dependencies:
+    fullpage.js "^3.1.0"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
