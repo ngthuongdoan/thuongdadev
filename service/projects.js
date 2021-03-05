@@ -14,6 +14,7 @@ export default [
     technologies: ['vue-dot-js', 'spring', 'mongodb', 'googlecloud'],
     position: 'Team Leader, Frontend Developer',
     imgs: [require('../assets/img/mrvans.png')],
+    url: 'http://mrvans.vn',
   },
   {
     id: 'mafamille',
@@ -29,5 +30,6 @@ export default [
     technologies: ['vue-dot-js', 'spring', 'mongodb', 'amazonaws'],
     position: 'Team Leader, Frontend Developer',
     imgs: [require('../assets/img/mafamile.png')],
+    url: 'http://mafagroup.vn',
   },
 ]

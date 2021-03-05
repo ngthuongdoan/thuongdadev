@@ -7,7 +7,11 @@
         <img v-for="img in project.imgs" :src="img" :key="img" />
       </div>
       <div class="lg:ml-20">
-        <h1 class="text-4xl">{{ project.title }}</h1>
+        <a
+          class="text-4xl text-cloud cursor-pointer hover:underline"
+          :href="project.url"
+          >{{ project.title }}</a
+        >
         <div class="flex my-5">
           <p><b>Position: </b>{{ project.position }}</p>
           <p class="ml-10"><b>Team Size: </b>{{ project.size }}</p>
