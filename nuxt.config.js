@@ -8,9 +8,67 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Doan Ngoc Thuong Personal Website, focus on Frontend and Javascript Ecosystem. VueJS lover',
+      },
+      // OpenGraph data (Most widely used)
+      { property: 'og:title', content: 'Thuong Da Dev - Frontend Developer' },
+      { property: 'og:site_name', content: 'Thuong Da Dev' },
+      // The list of types is available here: http://ogp.me/#types
+      { property: 'og:type', content: 'website' },
+      // Should the the same as your canonical link, see below.
+      {
+        property: 'og:url',
+        content: 'http://www.ngthuongdoan.com',
+      },
+      {
+        property: 'og:image',
+        content: 'http://www.ngthuongdoan.com/ngthuongdoan.jpg',
+      },
+      // Often the same as your meta description, but not always.
+      {
+        property: 'og:description',
+        content:
+          'Doan Ngoc Thuong Personal Website, focus on Frontend and Javascript Ecosystem. VueJS lover',
+      },
+
+      // Twitter card
+      { name: 'twitter:card', content: 'summary' },
+      {
+        name: 'twitter:site',
+        content: 'http://www.ngthuongdoan.com',
+      },
+      { name: 'twitter:title', content: 'Thuong Da Dev - Frontend Developer' },
+      {
+        name: 'twitter:description',
+        content:
+          'Doan Ngoc Thuong Personal Website, focus on Frontend and Javascript Ecosystem. VueJS lover',
+      },
+      // Your twitter handle, if you have one.
+      {
+        name: 'twitter:image:src',
+        content: 'http://www.ngthuongdoan.com/ngthuongdoan.jpg',
+      },
+
+      // Google / Schema.org markup:
+      { itemprop: 'name', content: 'Thuong Da Dev - Frontend Developer' },
+      {
+        itemprop: 'description',
+        content:
+          'Doan Ngoc Thuong Personal Website, focus on Frontend and Javascript Ecosystem. VueJS lover',
+      },
+      {
+        itemprop: 'image',
+        content: 'http://www.ngthuongdoan.com/ngthuongdoan.jpg',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'canonical', href: 'http://www.ngthuongdoan.com' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
