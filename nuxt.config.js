@@ -25,6 +25,10 @@ export default {
         content: 'http://www.ngthuongdoan.com',
       },
       {
+        property: 'og:image',
+        content: 'http://www.ngthuongdoan.com/ngthuongdoan.jpg',
+      },
+      {
         property: 'og:image:url',
         content: 'http://www.ngthuongdoan.com/ngthuongdoan.jpg',
       },
