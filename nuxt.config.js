@@ -25,7 +25,7 @@ export default {
         content: 'http://www.ngthuongdoan.com',
       },
       {
-        property: 'og:image',
+        property: 'og:image:url',
         content: 'http://www.ngthuongdoan.com/ngthuongdoan.jpg',
       },
       // Often the same as your meta description, but not always.
