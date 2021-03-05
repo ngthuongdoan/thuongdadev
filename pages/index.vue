@@ -41,6 +41,7 @@ export default {
         menu: '#menu',
         anchors: ['', 'project', 'contact'],
         scrollBar: false,
+        scrollOverflow: true,
       },
     }
   },

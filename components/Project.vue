@@ -1,12 +1,13 @@
 <template>
   <div class="slide" :data-anchor="project.id">
-    <div class="w-screen h-screen flex justify-start items-start mt-24 px-20">
+    <div
+      class="w-screen h-screen flex lg:flex-row flex-col justify-start items-start mt-24 lg:px-20 px-5"
+    >
       <div class="w-1/2">
-        <img src="~@/assets/img/mafamile.png" alt="" />
+        <img v-for="img in project.imgs" :src="img" :key="img" />
       </div>
-      <div class="ml-20">
+      <div class="lg:ml-20">
         <h1 class="text-4xl">{{ project.title }}</h1>
-        <br />
         <div class="flex my-5">
           <p><b>Position: </b>{{ project.position }}</p>
           <p class="ml-10"><b>Team Size: </b>{{ project.size }}</p>
@@ -21,6 +22,14 @@
               :icon-name="icon"
             ></icon>
           </div>
+        </div>
+        <div>
+          <b>Responsibilities: </b>
+          <ul>
+            <li v-for="(res, index) in project.responsibilities" :key="index">
+              {{ res }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>

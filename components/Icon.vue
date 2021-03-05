@@ -8,14 +8,14 @@
     >
       <defs>
         <symbol :id="icon.tags" viewBox="0 0 1000 1000">
-          <title>{{ icon.tags }}</title>
-          <path :d="icon.paths"></path>
+          <title>{{ icon.tags[0] }}</title>
+          <path :d="icon.paths[0]"></path>
         </symbol>
       </defs>
     </svg>
-
-    <svg class="w-8 h-8 inline-block" :style="'fill:' + icon.attrs[0].fill">
-      <use :xlink:href="'#' + icon.tags"></use>
+    <!-- :style="'fill:' + icon.attrs[0].fill" -->
+    <svg class="w-8 h-8 inline-block" :style="'fill:' + icon.fill">
+      <use :xlink:href="'#' + icon.tags[0]"></use>
     </svg>
   </div>
 </template>
@@ -35,7 +35,9 @@ export default {
     },
   },
   created() {
-    this.icon = icons.icons.find((ico) => ico.tags[0] === this.iconName)
+    this.icon = icons.icons.find((ico) => {
+      return ico.tags[0] === this.iconName
+    })
   },
 }
 </script>
