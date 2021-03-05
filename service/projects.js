@@ -13,7 +13,7 @@ export default [
     ],
     technologies: ['vue-dot-js', 'spring', 'mongodb', 'googlecloud'],
     position: 'Team Leader, Frontend Developer',
-    imgs: [require('../assets/img/mrvans.png')],
+    imgs: [require('../assets/img/mrvans.jpg')],
     url: 'http://mrvans.vn',
   },
   {
@@ -29,7 +29,7 @@ export default [
     ],
     technologies: ['vue-dot-js', 'spring', 'mongodb', 'amazonaws'],
     position: 'Team Leader, Frontend Developer',
-    imgs: [require('../assets/img/mafamile.png')],
+    imgs: [require('../assets/img/mafamile.jpg')],
     url: 'http://mafagroup.vn',
   },
 ]
