@@ -2,7 +2,7 @@
   <div class="flex justify-center items-center w-full lg:px-80 px-5">
     <form class="w-full">
       <div class="flex flex-wrap w-full -mx-3 mb-6">
-        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+        <div class="md:w-1/2 px-3 mb-6 w-full md:mb-0">
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
             for="grid-first-name"
@@ -10,7 +10,7 @@
             First Name
           </label>
           <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-200 text-storm border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="grid-first-name"
             type="text"
             placeholder="Jane"
@@ -19,13 +19,13 @@
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            class="block uppercase tracking-wide text-xs font-bold mb-2"
             for="grid-last-name"
           >
             Last Name
           </label>
           <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            class="appearance-none block w-full bg-gray-200 text-storm border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-last-name"
             type="text"
             placeholder="Doe"
@@ -41,12 +41,12 @@
             E-mail
           </label>
           <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            class="appearance-none block w-full bg-gray-200 text-storm border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="email"
             type="email"
           />
           <p class="text-gray-600 text-xs italic">
-            Some tips - as long as needed
+            <!-- Some tips - as long as needed -->
           </p>
         </div>
       </div>
@@ -59,20 +59,21 @@
             Message
           </label>
           <textarea
-            class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
+            class="no-resize appearance-none block w-full bg-gray-200 text-storm border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
             id="message"
           ></textarea>
           <p class="text-gray-600 text-xs italic">
-            Re-size can be disabled by set by resize-none / resize-y / resize-x
-            / resize
+            <!-- Re-size can be disabled by set by resize-none / resize-y / resize-x
+            / resize -->
           </p>
         </div>
       </div>
       <div class="md:flex md:items-center">
         <div class="md:w-1/3">
           <button
-            class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            class="shadow bg-sunbrust hover:bg-teal focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="button"
+            @click="send"
           >
             Send
           </button>
@@ -84,7 +85,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      sender: {
+        lastname: '',
+        firstname: '',
+        email: '',
+        message: '',
+      },
+    }
+  },
+}
 </script>
 
 <style>

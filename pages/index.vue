@@ -26,14 +26,14 @@
     <!-- PROJECT -->
     <project-section class="section bg-sunbrust text-cloud"> </project-section>
     <!-- CONTACT -->
-    <contact-section class="section bg-storm text-cloud"> </contact-section>
+    <!-- <contact-section class="section bg-storm text-cloud"> </contact-section> -->
   </full-page>
 </template>
 
 <script>
 import ContactSection from '@/components/section/ContactSection'
 import ProjectSection from '@/components/section/ProjectSection'
-
+import { isMobile } from 'mobile-device-detect'
 export default {
   data() {
     return {
@@ -43,6 +43,12 @@ export default {
         scrollBar: false,
         scrollOverflow: true,
       },
+    }
+  },
+  middleware({ redirect }) {
+    // If the user is not authenticated
+    if (isMobile) {
+      return redirect('/comingsoon')
     }
   },
   components: {
