@@ -7,12 +7,10 @@
   padding: 0;
   font-family: 'Raleway', sans-serif;
 }
-
-.fp-controlArrow.fp-prev {
-  border-width: 38.5px 34px 38.5px 0;
-  border-color: transparent rgba(255, 255, 255, 0.205) transparent transparent !important;
-}
-.fp-controlArrow.fp-next {
-  border-width: 38.5px 0 38.5px 34px;
-  border-color: transparent transparent transparent rgba(255, 255, 255, 0.205) !important;
+.fullpage-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }

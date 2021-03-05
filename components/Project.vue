@@ -1,5 +1,5 @@
 <template>
-  <div class="slide" :data-anchor="project.id">
+  <div>
     <div
       class="w-screen h-screen flex lg:flex-row flex-col justify-start items-start mt-24 lg:px-20 px-5"
     >

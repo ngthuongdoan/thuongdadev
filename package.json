@@ -11,10 +11,11 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
+    "animate.css": "^4.1.1",
     "core-js": "^3.8.3",
+    "fullpage-vue": "^2.1.1",
     "mobile-device-detect": "^0.4.3",
     "nuxt": "^2.14.12",
-    "nuxt-fullpage.js": "^0.0.3",
     "sass-loader": "10.1.1"
   },
   "devDependencies": {

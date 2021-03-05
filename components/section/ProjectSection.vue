@@ -1,11 +1,5 @@
 <template>
-  <div class="overflow-auto">
-    <project
-      v-for="project in projects"
-      :key="project.id"
-      :project="project"
-    ></project>
-  </div>
+  <div class="overflow-auto"></div>
 </template>
 
 <script>
