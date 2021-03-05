@@ -1,5 +1,6 @@
 <template>
-  <div class="fullpage-container">
+  <coming-soon v-if="isMobile"></coming-soon>
+  <div v-else class="fullpage-container">
     <div class="fullpage-wp" v-fullpage="optsV" ref="example">
       <welcome-section
         class="page-1 page"
@@ -21,6 +22,7 @@
 <script>
 import WelcomeSection from '@/components/section/WelcomeSection'
 import ContactSection from '@/components/section/ContactSection'
+import ComingSoon from '@/components/section/ComingSoon'
 import ProjectSection from '@/components/section/ProjectSection'
 import Project from '@/components/Project'
 import mockProjects from '@/service/projects'
@@ -35,18 +37,14 @@ export default {
         overflow: 'auto',
       },
       projects: mockProjects,
-    }
-  },
-  middleware({ redirect }) {
-    // If the user is not authenticated
-    if (isMobile) {
-      return redirect('/comingsoon')
+      isMobile,
     }
   },
   components: {
     ContactSection,
     ProjectSection,
     WelcomeSection,
+    ComingSoon,
     Project,
   },
 }
