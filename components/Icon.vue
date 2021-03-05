@@ -14,7 +14,7 @@
       </defs>
     </svg>
 
-    <svg class="w-5 h-5 inline-block" :style="'fill:' + icon.attrs[0].fill">
+    <svg class="w-8 h-8 inline-block" :style="'fill:' + icon.attrs[0].fill">
       <use :xlink:href="'#' + icon.tags"></use>
     </svg>
   </div>
