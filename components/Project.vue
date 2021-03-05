@@ -10,6 +10,7 @@
         <a
           class="text-4xl text-cloud cursor-pointer hover:underline"
           :href="project.url"
+          target="_blank"
           >{{ project.title }}</a
         >
         <div class="flex my-5">
