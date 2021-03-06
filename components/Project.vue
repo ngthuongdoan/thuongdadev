@@ -4,12 +4,18 @@
       class="w-screen h-screen flex lg:flex-row flex-col justify-start items-start mt-24 lg:px-20 px-5"
     >
       <div class="w-1/2">
-        <img v-for="img in project.imgs" :src="img" :key="img" />
+        <img
+          v-for="img in project.imgs"
+          :src="img"
+          :key="img"
+          :alt="project.title"
+        />
       </div>
       <div class="lg:ml-20">
         <a
           class="text-4xl text-cloud cursor-pointer hover:underline"
           :href="project.url"
+          rel="noreferrer"
           target="_blank"
           >{{ project.title }}</a
         >
