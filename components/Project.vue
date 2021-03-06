@@ -17,6 +17,7 @@
           :href="project.url"
           rel="noreferrer"
           target="_blank"
+          :aria-label="project.title"
           >{{ project.title }}</a
         >
         <div class="flex my-5">
