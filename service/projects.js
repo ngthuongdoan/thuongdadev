@@ -1,5 +1,23 @@
 export default [
   {
+    id: 'mafamille',
+    title: 'Ma Famille',
+    description:
+      'Mafa Group is a local organization of food industry located in Can Tho City. ',
+    size: 2,
+    responsibilities: [
+      'Design UI/UX and implement the solution based on the customer requirements.',
+      'Using VueJS to create the website.',
+      'Be responsible for the deployment of the website on the Amazon Web Service Platform.',
+    ],
+    technologies: ['vue-dot-js', 'spring', 'mongodb', 'amazonaws'],
+    position: 'Team Leader, Frontend Developer',
+    imgs: [require('../assets/img/mafamile.jpg')],
+    url: 'http://mafagroup.vn',
+    github: '',
+    isPermited: false,
+  },
+  {
     id: 'mrvans',
     title: 'MR.VANS',
     description:
@@ -15,21 +33,26 @@ export default [
     position: 'Team Leader, Frontend Developer',
     imgs: [require('../assets/img/mrvans.jpg')],
     url: 'http://mrvans.vn',
+    github: '',
+    isPermited: false,
   },
+
   {
-    id: 'mafamille',
-    title: 'Ma Famille',
+    id: 'Schooling',
+    title: 'Schooling',
     description:
-      'Mafa Group is a local organization of food industry located in Can Tho City. ',
-    size: 2,
+      'This is the first website of my Web Development career for a Subject. It allows users to create multiple courses, assigns to a lecturer, create study events, etc. All of that will be visualized on a Timetable, which using FullCalendar.js',
+    size: 1,
     responsibilities: [
-      'Design UI/UX and implement the solution based on the customer requirements.',
-      'Using VueJS to create the website.',
-      'Be responsible for the deployment of the website on the Amazon Web Service Platform.',
+      'Create all of its documents such as: Software Specification, Software Design,...',
+      'Using NodeJS to build a server side rendering website based on MVC structure',
+      '',
     ],
-    technologies: ['vue-dot-js', 'spring', 'mongodb', 'amazonaws'],
-    position: 'Team Leader, Frontend Developer',
-    imgs: [require('../assets/img/mafamile.jpg')],
-    url: 'http://mafagroup.vn',
+    technologies: ['html5', 'css3', 'javascript', 'node-dot-js', 'mysql'],
+    position: 'Full Stack Developer',
+    imgs: [require('../assets/img/sm3.png')],
+    url: '',
+    github: 'https://github/ngthuongdoan/StudyManagement',
+    isPermited: true,
   },
 ]

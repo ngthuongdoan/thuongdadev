@@ -10,8 +10,21 @@
           :key="img"
           :alt="project.title"
         />
+        <button
+          v-if="project.isPermited"
+          @click="viewCode(project.github)"
+          class="mt-4 mr-5 px-5 py-3 bg-storm font-bold rounded-full ease-in-out duration-200 hover:bg-teal"
+        >
+          View Code
+        </button>
+        <button
+          @click="viewSite(project.url)"
+          class="mt-4 px-5 py-3 bg-cloud text-storm font-bold rounded-full ease-in-out duration-200 hover:bg-teal hover:text-cloud"
+        >
+          Live Site
+        </button>
       </div>
-      <div class="lg:ml-20">
+      <div class="max-w-lg lg:ml-20">
         <a
           class="text-4xl text-cloud cursor-pointer hover:underline"
           :href="project.url"
@@ -56,6 +69,10 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  methods: {
+    viewCode(github) {},
+    viewSite(url) {},
   },
   components: {
     Icon,
