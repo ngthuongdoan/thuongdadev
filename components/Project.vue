@@ -40,11 +40,14 @@
         <p><b>Description: </b>{{ project.description }}</p>
         <div class="my-5">
           <b>Technologies: </b>
-          <div class="flex gap-5 my-5">
+          <div
+            class="flex gap-5 my-5 bg-cloud w-min px-3 py-2 rounded bg-opacity-95"
+          >
             <icon
               v-for="icon in project.technologies"
               :key="icon"
               :icon-name="icon"
+              :title="icon"
             ></icon>
           </div>
         </div>

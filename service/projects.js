@@ -18,6 +18,29 @@ export default [
     isPermited: false,
   },
   {
+    id: 'se-department',
+    title: 'Can Tho University - Software Engrineering Department Website',
+    description:
+      'SE Website is used for introducing about Software Engrineering Department of Can Tho University. Beside, it is also used for the AUN-QA.',
+    size: 4,
+    responsibilities: [
+      'Design UI/UX and implement the solution based on the customer requirements.',
+      'Using VueJS to create the website.',
+    ],
+    technologies: [
+      'vue-dot-js',
+      'sass',
+      'tailwindcss',
+      'node-dot-js',
+      'postgresql',
+    ],
+    position: 'Team Leader, Frontend Developer',
+    imgs: [require('../assets/img/mafamile.jpg')],
+    url: 'http://mafagroup.vn',
+    github: '',
+    isPermited: false,
+  },
+  {
     id: 'mrvans',
     title: 'MR.VANS',
     description:
