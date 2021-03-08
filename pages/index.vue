@@ -1,5 +1,6 @@
 <template>
-  <coming-soon v-if="isMobile"></coming-soon>
+  <loading-screen v-if="isLoading" v-once></loading-screen>
+  <coming-soon v-else-if="isMobile"></coming-soon>
   <div v-else class="fullpage-container">
     <div class="fullpage-wp" v-fullpage="optsV" ref="example">
       <welcome-section
@@ -22,6 +23,7 @@ import ContactSection from '@/components/section/ContactSection'
 import ComingSoon from '@/components/section/ComingSoon'
 import ProjectSection from '@/components/section/ProjectSection'
 import { isMobile } from 'mobile-device-detect'
+import LoadingScreen from '@/components/LoadingScreen.vue'
 export default {
   data() {
     return {
@@ -32,13 +34,20 @@ export default {
         overflow: 'auto',
       },
       isMobile,
+      isLoading: true,
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false
+    }, 5000)
   },
   components: {
     ContactSection,
     ProjectSection,
     WelcomeSection,
     ComingSoon,
+    LoadingScreen,
     ProjectSection,
   },
 }

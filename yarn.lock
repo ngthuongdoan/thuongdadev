@@ -8239,6 +8239,11 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
+please-wait@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/please-wait/-/please-wait-0.0.5.tgz#67098ce6260e92e0809e2d3b7c23f1d167dad960"
+  integrity sha1-ZwmM5iYOkuCAni07fCPx0Wfa2WA=
+
 pnp-webpack-plugin@^1.6.4:
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/pnp-webpack-plugin/-/pnp-webpack-plugin-1.6.4.tgz#c9711ac4dc48a685dabafc86f8b6dd9f8df84149"
