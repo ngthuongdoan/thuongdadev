@@ -5,17 +5,12 @@
       <welcome-section
         class="page-1 page"
         @to-project="$refs.example.$fullpage.moveTo(1, true)"
-        @to-contact="toLast"
+        @to-contact="$refs.example.$fullpage.moveTo(2, true)"
       ></welcome-section>
       <!-- PROJECT -->
-      <project
-        v-for="(project, index) in projects"
-        :key="project.id"
-        :project="project"
-        :class="['page-' + (index + 1), '', 'bg-sunbrust', 'text-cloud']"
-      ></project>
+      <project-section class="page-2 page"></project-section>
       <!-- CONTACT -->
-      <contact-section class="page-10 bg-storm text-cloud flex">
+      <contact-section class="page-3 bg-storm text-cloud flex">
       </contact-section>
     </div>
   </div>
@@ -26,8 +21,6 @@ import WelcomeSection from '@/components/section/WelcomeSection'
 import ContactSection from '@/components/section/ContactSection'
 import ComingSoon from '@/components/section/ComingSoon'
 import ProjectSection from '@/components/section/ProjectSection'
-import Project from '@/components/Project'
-import mockProjects from '@/service/projects'
 import { isMobile } from 'mobile-device-detect'
 export default {
   data() {
@@ -38,26 +31,39 @@ export default {
         duration: 500,
         overflow: 'auto',
       },
-      projects: mockProjects,
       isMobile,
     }
-  },
-  computed: {
-    lastSlide() {
-      return 1 + this.projects.length
-    },
-  },
-  methods: {
-    toLast() {
-      this.$refs.example.$fullpage.moveTo(this.lastSlide, true)
-    },
   },
   components: {
     ContactSection,
     ProjectSection,
     WelcomeSection,
     ComingSoon,
-    Project,
+    ProjectSection,
   },
 }
 </script>
+<style lang="scss">
+.slick__container {
+  position: relative;
+
+  #left-arrow-intro {
+    transform: scale(0.5) rotate(180deg);
+    left: 0;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 50%;
+    top: 40%;
+    z-index: 100;
+  }
+  #right-arrow-intro {
+    right: 0;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0.5);
+    top: 40%;
+    z-index: 100;
+  }
+}
+</style>
