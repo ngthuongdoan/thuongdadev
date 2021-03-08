@@ -9,6 +9,7 @@
       </div>
       <div class="flex w-screen justify-center content-around mt-10 gap-x-8">
         <button
+          @click="toContact"
           class="bg-transparent text-sunbrust font-semibold text-base px-5 py-1 rounded-full border border-sunbrust hover:bg-sunbrust hover:text-cloud transition-all duration-300 ease-in-out"
         >
           contact me
@@ -30,6 +31,9 @@ export default {
   methods: {
     toProject() {
       this.$emit('to-project')
+    },
+    toContact() {
+      this.$emit('to-contact')
     },
   },
 }

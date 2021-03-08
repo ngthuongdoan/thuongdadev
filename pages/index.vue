@@ -5,16 +5,18 @@
       <welcome-section
         class="page-1 page"
         @to-project="$refs.example.$fullpage.moveTo(1, true)"
+        @to-contact="toLast"
       ></welcome-section>
       <!-- PROJECT -->
       <project
         v-for="(project, index) in projects"
         :key="project.id"
         :project="project"
-        :class="['page-' + (index + 1), 'page', 'bg-sunbrust', 'text-cloud']"
+        :class="['page-' + (index + 1), '', 'bg-sunbrust', 'text-cloud']"
       ></project>
       <!-- CONTACT -->
-      <!-- <contact-section class="section bg-storm text-cloud"> </contact-section> -->
+      <contact-section class="page-10 bg-storm text-cloud flex">
+      </contact-section>
     </div>
   </div>
 </template>
@@ -39,6 +41,16 @@ export default {
       projects: mockProjects,
       isMobile,
     }
+  },
+  computed: {
+    lastSlide() {
+      return 1 + this.projects.length
+    },
+  },
+  methods: {
+    toLast() {
+      this.$refs.example.$fullpage.moveTo(this.lastSlide, true)
+    },
   },
   components: {
     ContactSection,

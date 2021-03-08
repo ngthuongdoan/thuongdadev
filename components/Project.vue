@@ -12,13 +12,13 @@
         />
         <button
           v-if="project.isPermited"
-          @click="viewCode(project.github)"
+          @click="to(project.github)"
           class="mt-4 mr-5 px-5 py-3 bg-storm font-bold rounded-full ease-in-out duration-200 hover:bg-teal"
         >
           View Code
         </button>
         <button
-          @click="viewSite(project.url)"
+          @click="to(project.url)"
           class="mt-4 px-5 py-3 bg-cloud text-storm font-bold rounded-full ease-in-out duration-200 hover:bg-teal hover:text-cloud"
         >
           Live Site
@@ -74,8 +74,9 @@ export default {
     },
   },
   methods: {
-    viewCode(github) {},
-    viewSite(url) {},
+    to(url) {
+      window.open(url, '_blank')
+    },
   },
   components: {
     Icon,
