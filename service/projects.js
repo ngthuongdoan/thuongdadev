@@ -75,7 +75,7 @@ export default [
     position: 'Full Stack Developer',
     imgs: [require('../assets/img/sm3.png')],
     url: '',
-    github: 'https://github/ngthuongdoan/StudyManagement',
+    github: 'https://github.com/ngthuongdoan/StudyManagement',
     isPermited: true,
   },
 ]

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-row pt-20 w-full px-5">
+  <div class="flex-row pt-20 w-full p-20">
     <contact-info></contact-info>
     <contact-form></contact-form>
   </div>
