@@ -24,6 +24,7 @@ export default {
     return {
       projects: mockProjects,
       slickOptions: {
+        dots: true,
         nextArrow: '#right-arrow-intro',
         prevArrow: '#left-arrow-intro',
         slidesToShow: 1,

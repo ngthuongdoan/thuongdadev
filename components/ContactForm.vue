@@ -4,43 +4,31 @@
       <div class="flex-1">
         <label for="">Name</label>
         <br />
-        <input
-          class="w-full px-3 py-2 text-storm font-medium rounded"
-          type="text"
-          v-model="sender.name"
-        />
+        <input class="field" type="text" v-model="sender.name" />
       </div>
       <div class="ml-5 flex-1">
         <label for="">Email</label>
         <br />
-        <input
-          class="w-full px-3 py-2 text-storm font-medium rounded"
-          type="email"
-          v-model="sender.email"
-        />
+        <input class="field" type="email" v-model="sender.email" />
       </div>
     </div>
     <div class="mb-5">
       <label for="">Title</label>
       <br />
-      <input
-        class="w-full px-3 py-2 text-storm font-medium rounded"
-        type="text"
-        v-model="sender.title"
-      />
+      <input class="field" type="text" v-model="sender.title" />
     </div>
     <div class="mb-5">
       <label for="">Message</label>
       <br />
       <textarea
-        class="w-full px-3 py-2 text-storm font-medium rounded"
+        class="field"
         type="text"
         rows="10"
         v-model="sender.message"
       ></textarea>
     </div>
     <input
-      class="bg-subrust hover:bg-cloud hover:text-storm cloud font-bold px-4 py-2 rounded ease-in-out duration-300"
+      class="bg-sunbrust hover:bg-cloud hover:text-storm font-bold px-4 py-2 rounded ease-in-out duration-300"
       type="submit"
       value="Send"
     />

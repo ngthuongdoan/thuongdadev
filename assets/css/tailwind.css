@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Raleway;
+    font-weight: 400;
+    src: url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  button,
+  button:focus {
+    outline: none;
+  }
+}
+
+@layer components {
+  .fullpage-container {
+    @apply absolute left-0 top-0 w-full h-full;
+  }
+  .btn {
+    @apply font-semibold text-base px-5 py-1 rounded-full border transition-all duration-300 ease-in-out;
+  }
+  .field {
+    @apply w-full px-3 py-2 text-storm font-medium rounded focus:outline-none;
+  }
+  .slick-dots {
+    @apply bottom-5;
+  }
+}

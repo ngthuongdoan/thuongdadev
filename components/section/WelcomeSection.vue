@@ -10,13 +10,13 @@
       <div class="flex w-screen justify-center content-around mt-10 gap-x-8">
         <button
           @click="toContact"
-          class="bg-transparent text-sunbrust font-semibold text-base px-5 py-1 rounded-full border border-sunbrust hover:bg-sunbrust hover:text-cloud transition-all duration-300 ease-in-out"
+          class="btn bg-transparent text-sunbrust border-sunbrust hover:bg-sunbrust hover:text-cloud"
         >
           contact me
         </button>
         <img class="w-10 object-cover" src="~@/assets/icons/heart.png" alt="" />
         <button
-          class="bg-storm font-semibold text-base text-cloud px-5 py-1 rounded-full border hover:bg-teal hover:text-cloud transition-all duration-300 ease-in-out"
+          class="btn bg-storm text-cloud hover:bg-teal hover:text-cloud"
           @click="toProject"
         >
           see projects
