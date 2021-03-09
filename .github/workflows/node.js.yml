@@ -27,3 +27,4 @@ jobs:
       - run: npm install -g yarn
       - run: yarn
       - run: yarn build --if-present
+      - run: pm2 restart 0
