@@ -26,4 +26,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install -g yarn
       - run: yarn
-      - run: sh ./bashfile/thuongdadev.sh
+      - run: sh ~/bashfile/thuongdadev.sh
