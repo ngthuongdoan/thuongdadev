@@ -9,6 +9,10 @@ on:
   pull_request:
     branches: [master]
 
+defaults:
+  run:
+    working-directory: /home/ubuntu/thuongdadev
+
 jobs:
   build:
     runs-on: self-hosted
@@ -24,8 +28,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          working-directory: ~/thuongdadev
-      - run: npm install -g yarn
       - run: yarn
       # - run: sh ~/bashfile/thuongdadev.sh
       - run: yarn build
