@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          working-directory: ~/thuongdadev
       - run: npm install -g yarn
       - run: yarn
       # - run: sh ~/bashfile/thuongdadev.sh
