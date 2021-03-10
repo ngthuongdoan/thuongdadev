@@ -33,3 +33,4 @@ jobs:
       # - run: sh ~/bashfile/thuongdadev.sh
       - run: sudo yarn build
       - run: pm2 restart 0
+      - run: sudo service nginx restart
