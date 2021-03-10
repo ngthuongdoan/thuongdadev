@@ -11,7 +11,7 @@
       <!-- PROJECT -->
       <project-section class="page-2 page"></project-section>
       <!-- CONTACT -->
-      <contact-section class="page-3 bg-teal text-cloud flex">
+      <contact-section class="page-3 bg-storm text-cloud flex">
       </contact-section>
     </div>
   </div>
