@@ -1,5 +1,12 @@
 <template>
   <div class="fixed flex top-5 right-5 space-x-4 z-10">
+    <a rel="noreferrer" aria-label="Resume" href="/cv.pdf" download>
+      <img
+        class="w-7 object-contain transition-all duration-300 ease-in-out cursor-pointer grayscale"
+        alt="cv"
+        src="https://img.icons8.com/fluent/48/000000/open-resume.png"
+      />
+    </a>
     <a
       href="https://github.com/ngthuongdoan"
       rel="noreferrer"
@@ -56,5 +63,13 @@
 export default {}
 </script>
 
-<style>
+<style lang="scss">
+#cv {
+  display: none;
+}
+#cv__icon:hover {
+  #cv {
+    display: block !important;
+  }
+}
 </style>
