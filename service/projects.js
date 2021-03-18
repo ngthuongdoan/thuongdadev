@@ -36,7 +36,7 @@ export default [
     ],
     position: 'Team Leader, Frontend Developer',
     imgs: [require('../assets/img/se.png')],
-    url: 'http://www.cit.ctu.edu.vn/encict/DoSE/',
+    url: 'http://se.cit.ctu.edu.vn',
     github: '',
     isPermited: false,
   },
