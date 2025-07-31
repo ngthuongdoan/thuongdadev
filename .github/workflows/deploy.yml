@@ -1,6 +1,6 @@
 # .github/workflows/deploy.yml
 
-name: Deploy to VPS
+name: Deploy Next.js Static Site to VPS
 
 on:
   push:
@@ -15,51 +15,49 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4 # Action to checkout your repository code
 
-      - name: Set up Node.js (if your project is Node.js-based)
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.14.0' # Specify your Node.js version
+          node-version: '20' # Specify your Node.js version
 
-      - name: Install dependencies (if applicable)
+      - name: Install dependencies
         run: npm install -f # Or yarn install, pnpm install, etc.
 
-      - name: Build project
-        run: npm run build # Or your specific build command (e.g., yarn build, pnpm build)
+      - name: Build and Export Next.js Project
+        # This step first builds the Next.js project (creating .next)
+        # then exports it to static files (creating the 'out' directory).
+        run: |
+          npm run build
+          npm run export
         env:
-          # Add any environment variables needed for your build process here
           NODE_ENV: production
 
-      - name: Deploy to VPS via SSH
+      - name: Deploy 'out' directory to VPS via SSH
         uses: appleboy/ssh-action@v1.0.0 # Action to connect and execute commands via SSH
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT || 22 }} # Use port 22 by default, or your custom port
           # The 'script' command will be executed on the remote VPS
           script: |
             # Define the target directory on your VPS.
-            # public_html is the standard document root.
-            # www is often a symlink to public_html, so public_html is a safe bet.
-            TARGET_DIR="/home/${{ secrets.SSH_USERNAME }}/public_html" # Adjust if your path is different
+            # public_html is the standard document root for cPanel.
+            TARGET_DIR="/home/${{ secrets.SSH_USERNAME }}/public_html"
 
-            # Create the target directory if it doesn't exist
+            echo "Ensuring target directory exists: $TARGET_DIR"
             mkdir -p $TARGET_DIR
 
-            # Remove existing files in the target directory (optional, but good for clean deployments)
-            # Be very careful with 'rm -rf'! Ensure TARGET_DIR is correct.
+            echo "Removing old files from $TARGET_DIR for a clean deployment..."
+            # WARNING: This command removes ALL files and subdirectories
+            # from the TARGET_DIR. Ensure TARGET_DIR is correct!
             rm -rf $TARGET_DIR/*
 
-            # Use rsync for efficient file transfer.
-            # The 'source' is the 'build' directory created by your build step.
-            # The 'target' is the directory on your VPS.
-            # The 'rsync' command will be executed on the GitHub Actions runner,
-            # transferring files from the runner to the VPS.
-            # The 'source' path here refers to the path on the GitHub Actions runner.
-            # The 'target' path refers to the path on the remote VPS.
-            rsync -avz --delete ./.next/ $TARGET_DIR/
-            # If your build output is in 'dist', change './build/' to './dist/'
-            # Example: rsync -avz --delete ./.next/ $TARGET_DIR/
+            echo "Transferring static files from 'out' directory to $TARGET_DIR..."
+            # Use rsync to efficiently transfer files.
+            # './out/' refers to the directory created by 'next export' on the GitHub Actions runner.
+            # $TARGET_DIR/ refers to the destination on your VPS.
+            rsync -avz --delete ./out/ $TARGET_DIR/
 
             echo "Deployment complete to $TARGET_DIR!"
 
