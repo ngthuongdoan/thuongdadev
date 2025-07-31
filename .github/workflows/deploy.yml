@@ -52,7 +52,7 @@ jobs:
             # WARNING: This command removes ALL files and subdirectories
             # from the TARGET_DIR. Ensure TARGET_DIR is correct!
             rm -rf $TARGET_DIR/*
-
+            mkdir -p $TARGET_DIR/out # Ensure the 'out' directory exists
             echo "Transferring static files from 'out' directory to $TARGET_DIR..."
             # Use rsync to efficiently transfer files.
             # './out/' refers to the directory created by 'next export' on the GitHub Actions runner.
