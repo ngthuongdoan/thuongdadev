@@ -64,7 +64,7 @@ jobs:
             # Use rsync to efficiently transfer files.
             # './out/' refers to the directory created by 'next export' on the GitHub Actions runner.
             # $TARGET_DIR/ refers to the destination on your VPS.
-            rsync -avz --delete out $TARGET_DIR
+            rsync -avz --delete /home/runner/work/thuongdadev/thuongdadev/out $TARGET_DIR
 
             echo "Deployment complete to $TARGET_DIR!"
 
