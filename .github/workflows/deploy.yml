@@ -31,6 +31,13 @@ jobs:
           npm run export
         env:
           NODE_ENV: production
+      - name: "Debug: List files after build/export"
+          # This step helps verify if the 'out' directory was created and where.
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "Files in current directory:"
+          ls -la
 
       - name: Deploy 'out' directory to VPS via SSH
         uses: appleboy/ssh-action@v1.0.0 # Action to connect and execute commands via SSH
