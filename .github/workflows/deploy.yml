@@ -1,0 +1,65 @@
+# .github/workflows/deploy.yml
+
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main # This workflow runs when changes are pushed to the 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # Action to checkout your repository code
+
+      - name: Set up Node.js (if your project is Node.js-based)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.14.0' # Specify your Node.js version
+
+      - name: Install dependencies (if applicable)
+        run: npm install # Or yarn install, pnpm install, etc.
+
+      - name: Build project
+        run: npm run build # Or your specific build command (e.g., yarn build, pnpm build)
+        env:
+          # Add any environment variables needed for your build process here
+          NODE_ENV: production
+
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.0 # Action to connect and execute commands via SSH
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }} # Use port 22 by default, or your custom port
+          # The 'script' command will be executed on the remote VPS
+          script: |
+            # Define the target directory on your VPS.
+            # public_html is the standard document root.
+            # www is often a symlink to public_html, so public_html is a safe bet.
+            TARGET_DIR="/home/${{ secrets.SSH_USERNAME }}/public_html" # Adjust if your path is different
+
+            # Create the target directory if it doesn't exist
+            mkdir -p $TARGET_DIR
+
+            # Remove existing files in the target directory (optional, but good for clean deployments)
+            # Be very careful with 'rm -rf'! Ensure TARGET_DIR is correct.
+            rm -rf $TARGET_DIR/*
+
+            # Use rsync for efficient file transfer.
+            # The 'source' is the 'build' directory created by your build step.
+            # The 'target' is the directory on your VPS.
+            # The 'rsync' command will be executed on the GitHub Actions runner,
+            # transferring files from the runner to the VPS.
+            # The 'source' path here refers to the path on the GitHub Actions runner.
+            # The 'target' path refers to the path on the remote VPS.
+            rsync -avz --delete ./.next/ $TARGET_DIR/
+            # If your build output is in 'dist', change './build/' to './dist/'
+            # Example: rsync -avz --delete ./.next/ $TARGET_DIR/
+
+            echo "Deployment complete to $TARGET_DIR!"
+
