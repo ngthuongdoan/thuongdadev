@@ -21,7 +21,7 @@ jobs:
           node-version: '22.14.0' # Specify your Node.js version
 
       - name: Install dependencies (if applicable)
-        run: npm install # Or yarn install, pnpm install, etc.
+        run: npm install -f # Or yarn install, pnpm install, etc.
 
       - name: Build project
         run: npm run build # Or your specific build command (e.g., yarn build, pnpm build)
