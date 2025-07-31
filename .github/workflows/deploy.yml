@@ -40,33 +40,15 @@ jobs:
           ls -la
 
       - name: Deploy 'out' directory to VPS via SSH
-        uses: appleboy/ssh-action@v1.0.0 # Action to connect and execute commands via SSH
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT || 22 }} # Use port 22 by default, or your custom port
-          # The 'script' command will be executed on the remote VPS
-          script: |
-            # Define the target directory on your VPS.
-            # public_html is the standard document root for cPanel.
-            TARGET_DIR="/home/${{ secrets.SSH_USERNAME }}/public_html"
-
-            echo "Ensuring target directory exists: $TARGET_DIR"
-            mkdir -p $TARGET_DIR
-
-            echo "Removing old files from $TARGET_DIR for a clean deployment..."
-            # WARNING: This command removes ALL files and subdirectories
-            # from the TARGET_DIR. Ensure TARGET_DIR is correct!
-            rm -rf $TARGET_DIR/*
-       
-          # The 'source' and 'target' parameters handle the rsync transfer from the runner to the VPS.
-          # './out/' refers to the directory created by 'next export' on the GitHub Actions runner.
-          source: "./out/"
-          target: "/home/${{ secrets.SSH_USERNAME }}/public_html" # Absolute path on the remote server
-          # Options for rsync. --delete is included by default when source/target are used.
-          # You can add more options if needed, e.g., 'rsync_options: "-avz --exclude=.git"'
-          rsync_options: "-avz"
+          port: ${{ secrets.SSH_PORT || 22 }}
+          source: "./out/*"
+          target: "/home/${{ secrets.SSH_USERNAME }}/public_html"
+          strip_components: 1
       - name: Post-Deployment Message
         # This step runs on the GitHub Actions runner after the SSH action completes.
         run: echo "Deployment process initiated. Check your VPS for files in public_html."
