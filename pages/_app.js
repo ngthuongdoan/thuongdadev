@@ -4,7 +4,9 @@ import { ThemeProvider } from "next-themes";
 const App = ({ Component, pageProps }) => {
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <main className="overflow-x-clip">
+        <Component {...pageProps} />
+      </main>
     </ThemeProvider>
   );
 };
