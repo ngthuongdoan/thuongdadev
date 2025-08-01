@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Specify your Node.js version
+          node-version: '22.14.0' # Specify your Node.js version
 
       - name: Install dependencies
         run: npm install -f # Or yarn install, pnpm install, etc.
