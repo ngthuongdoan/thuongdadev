@@ -49,6 +49,23 @@ jobs:
           source: "./out/*"
           target: "/home/${{ secrets.SSH_USERNAME }}/public_html"
           strip_components: 1
+      
+      - name: Copy backup folder to preserve old routes
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            if [ -d ~/backup ]; then
+              echo "Copying backup folder to public_html to preserve old routes..."
+              cp -r ~/backup/* ~/public_html/ 2>/dev/null || echo "No files to copy from backup or some files already exist"
+              echo "Backup copy completed."
+            else
+              echo "Warning: ~/backup directory not found. Skipping backup copy."
+            fi
+
       - name: Post-Deployment Message
         # This step runs on the GitHub Actions runner after the SSH action completes.
         run: echo "Deployment process initiated. Check your VPS for files in public_html."
