@@ -76,7 +76,15 @@ const Resume = () => {
                     {resume.education.universityDate}
                   </h3>
                   <p className="text-sm mt-2 opacity-50">
-                    {resume.education.universityPara}
+                    {resume.education.universityPara && resume.education.universityPara.length > 0 && (
+                      <ul className="list-none">
+                        {resume.education.universityPara.split("-").map((bullet, index) => (
+                          <li key={index} className="text-sm my-1 opacity-70">
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </p>
                 </div>
               </div>
